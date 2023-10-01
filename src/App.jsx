@@ -1,6 +1,19 @@
+import { useFeatchData } from './components/FeatchData'
 import Card from './components/Card'
 
 function App() {
+  const { loading, projects } = useFeatchData()
+
+  if (loading) {
+    return (
+      <section className='section-center'>
+        <div className='title-center'>
+          <h2 className=''>Loading...</h2>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <>
       <section className='section-center'>
@@ -9,13 +22,9 @@ function App() {
         </div>
 
         <div className='card-center'>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {projects.map((item) => {
+            return <Card key={item.id} item={item} />
+          })}
         </div>
       </section>
     </>

@@ -40,8 +40,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--green-light);
+  background-color: var(--grey-900);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -52,15 +52,14 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--grey-900);
+    background-color: var(--green-light);
   }
 }
 
 /* card css */
 
 .section-center {
-  /* background-color: aqua; */
   width: 100%;
   max-width: 96em;
   margin: 1em auto;
@@ -80,11 +79,13 @@
 }
 
 .card-item {
-  background: red;
+  text-decoration: none;
+  background:#E91E63;
   display: block;
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-2);
   transition: var(--transition);
+  /* cursor: pointer; */
 }
 .card-item:hover {
   transform: scale(1.05);
@@ -96,6 +97,11 @@
   border-top-left-radius: var(--borderRadius);
 }
 
+.card-title {
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--grey-100);
+}
 @media (min-width: 768px) {
   .card-center {
     grid-template-columns: 1fr 1fr;
